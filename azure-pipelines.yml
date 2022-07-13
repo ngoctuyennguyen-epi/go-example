@@ -20,9 +20,10 @@ steps:
     version: '1.18.4'
 - script: |
     export PATH="$(GOROOT)/bin:$(PATH)"
+    go get -d
     
-- task: Go@0
-  inputs:
-    command: 'get'
-    arguments: '-d'
+# - task: Go@0
+#   inputs:
+#     command: 'get'
+#     arguments: '-d'
 #     workingDirectory: '$(System.DefaultWorkingDirectory)'
