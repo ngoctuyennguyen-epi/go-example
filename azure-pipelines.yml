@@ -23,8 +23,8 @@ steps:
     go version
     go env
     
-# - task: Go@0
-#   inputs:
-#     command: 'get'
-#     arguments: '-d'
+- task: Go@0
+  inputs:
+    command: 'get'
+    arguments: '-d'
 #     workingDirectory: '$(System.DefaultWorkingDirectory)'
