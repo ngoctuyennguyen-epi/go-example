@@ -9,10 +9,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
   
-variables:
-  GOPATH: '$(Agent.HomeDirectory)/go' # Go workspace path
-  GOBIN:  '$(GOPATH)/bin' # Go binaries path
-  GOROOT: '/opt/hostedtoolcache/go/1.18.4/x64' # Go installation path
+# variables:
+#   GOPATH: '$(Agent.HomeDirectory)/go' # Go workspace path
+#   GOBIN:  '$(GOPATH)/bin' # Go binaries path
+#   GOROOT: '/opt/hostedtoolcache/go/1.18.4/x64' # Go installation path
 
 steps: 
 - task: GoTool@0
@@ -25,6 +25,6 @@ steps:
     
 - task: Go@0
   inputs:
-    command: 'get'
-    arguments: '-d'
-#     workingDirectory: '$(System.DefaultWorkingDirectory)'
+    command: 'test'
+    arguments: '-v'
+    workingDirectory: './stringutil'
