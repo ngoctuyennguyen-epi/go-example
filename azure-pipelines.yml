@@ -21,6 +21,7 @@ steps:
 - script: |
     export PATH="$(GOROOT)/bin:$(PATH)"
     go version
+    go env
     
 # - task: Go@0
 #   inputs:
