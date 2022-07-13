@@ -20,7 +20,7 @@ steps:
     version: '1.18.4'
 - script: |
     export PATH="$(GOROOT)/bin:$(PATH)"
-    go get -d
+    go version
     
 # - task: Go@0
 #   inputs:
