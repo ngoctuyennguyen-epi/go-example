@@ -18,8 +18,14 @@ steps:
 - task: GoTool@0
   inputs:
     version: '1.18.4'
-- task: Go@0
-  inputs:
-    command: 'get'
-    arguments: '-d'
-    workingDirectory: '$(System.DefaultWorkingDirectory)'
+- script: |
+    export PATH="$(GOROOT)/bin:$(PATH)"
+    printenv
+    ls -la
+    go env
+    go version
+# - task: Go@0
+#   inputs:
+#     command: 'get'
+#     arguments: '-d'
+#     workingDirectory: '$(System.DefaultWorkingDirectory)'
